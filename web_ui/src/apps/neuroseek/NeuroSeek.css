@@ -1,0 +1,157 @@
+.neuroseek-app {
+    --bg-color: #030305;
+    --bg-secondary: #0a0a12;
+    --primary: #00f3ff;
+    --primary-glow: rgba(0, 243, 255, 0.5);
+    --secondary: #bc13fe;
+    --text-main: #ffffff;
+    --text-muted: #8892b0;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --font-family: 'Segoe UI', Inter, system-ui, sans-serif;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-family);
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(188, 19, 254, 0.05) 0%, transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(0, 243, 255, 0.05) 0%, transparent 25%);
+}
+
+.neuroseek-app * {
+    box-sizing: border-box;
+}
+
+/* Utilities */
+.neuroseek-app .glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+}
+
+.neuroseek-app .neon-text {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.neuroseek-app .neon-border {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow), inset 0 0 10px var(--primary-glow);
+}
+
+.neuroseek-app .btn-primary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.neuroseek-app .btn-primary:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.neuroseek-app .btn-icon {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: color 0.3s;
+}
+
+.neuroseek-app .btn-icon:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 243, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 243, 255, 0);
+    }
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.neuroseek-app .scanline-overlay {
+    position: absolute;
+    /* Changed from fixed to absolute to stay inside window */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, rgba(0, 243, 255, 0.05), transparent);
+    animation: scanline 8s linear infinite;
+    z-index: 9999;
+}
+
+.neuroseek-app input,
+.neuroseek-app textarea {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    font-family: 'Consolas', 'Monaco', monospace;
+    padding: 1rem;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.neuroseek-app input:focus,
+.neuroseek-app textarea:focus {
+    border-color: var(--primary);
+}
+
+/* Scrollbar */
+.neuroseek-app ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.neuroseek-app ::-webkit-scrollbar-track {
+    background: #000;
+}
+
+.neuroseek-app ::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 4px;
+}
+
+.neuroseek-app ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}

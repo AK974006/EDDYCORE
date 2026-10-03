@@ -1,0 +1,17 @@
+{
+    "name": "eddycore",
+    "version": "1.0.0",
+    "description": "EDDYCORE Operating System",
+    "main": "temp_nova_ai/electron/main.js",
+    "scripts": {
+        "start": "electron .",
+        "dev": "concurrently \"npm:dev:web_ui\" \"npm:dev:electron\"",
+        "dev:web_ui": "cd web_ui && npm run dev",
+        "dev:electron": "wait-on http://localhost:5173 && npm start"
+    },
+    "devDependencies": {
+        "electron": "^39.2.3",
+        "concurrently": "^8.2.0",
+        "wait-on": "^7.0.1"
+    }
+}

@@ -1,0 +1,15 @@
+.waveform-wrapper {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 243, 255, 0.05), transparent);
+    border-top: 1px solid rgba(0, 243, 255, 0.1);
+}
+
+.waveform-canvas {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 5px #00f3ff);
+}

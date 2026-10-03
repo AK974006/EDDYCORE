@@ -1,0 +1,90 @@
+py : Traceback (most 
+recent call last):
+At line:1 char:1
++ py backend/check_supaba
+se.py 2>&1 | Out-File 
+-Encoding ascii tracebac 
+...
++ ~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+    + CategoryInfo       
+       : NotSpecified:   
+  (Traceback (most rec   
+ ent call last)::Stri    
+ng) [], RemoteExcept    
+ion
+    + FullyQualifiedErro 
+   rId : NativeCommandE  
+  rror
+ 
+  File "C:\projects\cloud
+\backend\check_supabase.p
+y", line 2, in <module>
+    from supabase import 
+create_client
+  File "C:\Users\HP\AppDa
+ta\Local\Programs\Python\
+Python314\Lib\site-packag
+es\supabase\__init__.py",
+ line 1, in <module>
+    from postgrest 
+import APIError as 
+PostgrestAPIError
+  File "C:\Users\HP\AppDa
+ta\Local\Programs\Python\
+Python314\Lib\site-packag
+es\postgrest\__init__.py"
+, line 3, in <module>
+    from httpx import 
+Timeout
+  File "C:\Users\HP\AppDa
+ta\Local\Programs\Python\
+Python314\Lib\site-packag
+es\httpx\__init__.py", 
+line 2, in <module>
+    from ._api import 
+delete, get, head, 
+options, patch, post, 
+put, request, stream
+  File "C:\Users\HP\AppDa
+ta\Local\Programs\Python\
+Python314\Lib\site-packag
+es\httpx\_api.py", line 
+4, in <module>
+    from ._client import 
+Client
+  File "C:\Users\HP\AppDa
+ta\Local\Programs\Python\
+Python314\Lib\site-packag
+es\httpx\_client.py", 
+line 30, in <module>
+    from 
+._transports.default 
+import 
+AsyncHTTPTransport, 
+HTTPTransport
+  File "C:\Users\HP\AppDa
+ta\Local\Programs\Python\
+Python314\Lib\site-packag
+es\httpx\_transports\defa
+ult.py", line 30, in 
+<module>
+    import httpcore
+  File "C:\Users\HP\AppDa
+ta\Local\Programs\Python\
+Python314\Lib\site-packag
+es\httpcore\__init__.py",
+ line 139, in <module>
+    setattr(__locals[__na
+me], "__module__", 
+"httpcore")  # noqa
+    ~~~~~~~^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^
+AttributeError: 
+'typing.Union' object 
+has no attribute 
+'__module__' and no 
+__dict__ for setting new 
+attributes. Did you 
+mean: '__reduce__'?

@@ -1,0 +1,163 @@
+.hologram-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hologram-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hologram-circle-outer {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 3px solid rgba(0, 243, 255, 0.4);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.3),
+        inset 0 0 30px rgba(0, 243, 255, 0.2);
+    animation: rotate 20s linear infinite;
+    transition: all 0.5s ease;
+}
+
+.listening .hologram-circle-outer {
+    border-color: rgba(255, 0, 85, 0.6);
+    box-shadow: 0 0 40px rgba(255, 0, 85, 0.4),
+        inset 0 0 40px rgba(255, 0, 85, 0.3);
+    animation-duration: 5s;
+}
+
+.hologram-circle-inner {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 2px dashed rgba(0, 243, 255, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    animation: rotate 15s linear infinite reverse;
+    transition: all 0.5s ease;
+}
+
+.listening .hologram-circle-inner {
+    border-color: rgba(255, 0, 85, 0.7);
+    box-shadow: 0 0 30px rgba(255, 0, 85, 0.3);
+    animation-duration: 4s;
+}
+
+.core-reactor {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse-glow 2s ease-in-out infinite;
+    transition: all 0.5s ease;
+}
+
+.listening .core-reactor {
+    animation: pulse-glow 0.8s ease-in-out infinite;
+}
+
+.reactor-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid #00f3ff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    box-shadow: 0 0 25px #00f3ff,
+        inset 0 0 25px #00f3ff;
+    animation: spin 3s linear infinite;
+    transition: all 0.5s ease;
+}
+
+.listening .reactor-ring {
+    border-color: #ff0055;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    box-shadow: 0 0 35px #ff0055,
+        inset 0 0 35px #ff0055;
+    animation-duration: 1s;
+}
+
+.reactor-core {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #fff 0%, #00f3ff 50%, transparent 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 40px #00f3ff,
+        0 0 80px #00f3ff,
+        inset 0 0 20px #fff;
+    animation: core-pulse 1.5s ease-in-out infinite;
+    transition: all 0.5s ease;
+}
+
+.listening .reactor-core {
+    background: radial-gradient(circle, #fff 0%, #ff0055 60%, transparent 100%);
+    box-shadow: 0 0 50px #ff0055,
+        0 0 100px #ff0055,
+        inset 0 0 30px #fff;
+    animation: core-pulse 0.8s ease-in-out infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+    }
+}
+
+@keyframes core-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 40px #00f3ff,
+            0 0 80px #00f3ff,
+            inset 0 0 20px #fff;
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 50px #00f3ff,
+            0 0 100px #00f3ff,
+            0 0 150px rgba(0, 243, 255, 0.5),
+            inset 0 0 30px #fff;
+    }
+}
